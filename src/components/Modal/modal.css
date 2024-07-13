@@ -1,0 +1,28 @@
+/* modal.css */
+.ant-btn {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .ant-picker {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ant-select {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .ant-modal-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ant-modal-footer .ant-btn {
+    width: 100%;
+    margin: 0; /* Remove left margin */
+  }
+  
