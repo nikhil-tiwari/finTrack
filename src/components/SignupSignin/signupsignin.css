@@ -5,6 +5,7 @@
     box-shadow: var(--shadow);
     border-radius: 1rem;
     padding: 1rem 1.5rem;
+    background-color: #fff;
 }
 
 .title {

@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useRef } from 'react';
 import Header from '../components/Header/header';
 import Cards from '../components/Cards/card';
+import TransactionsTable from '../components/TransactionsTable/transactionsTable';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../firebase';
 import { collection, getDocs, query } from 'firebase/firestore';
@@ -48,6 +49,7 @@ const DashBoard = () => {
     <div>
       <Header />
       <Cards />
+      <TransactionsTable />
     </div>
   );
 };

@@ -3,12 +3,13 @@
 :root {
   --theme: #2970ff;
   --black: #000;
-  --white: #fff;
+  --white: #f1f2f6;
   --shadow: 0px 0px 30px 8px rgba(227, 227, 227, 0.75);
   --low-shadow: 0px 0px 30px 8px rgba(241, 235, 235, 0.829);
 }
 
 body {
+  background-color: var(--white);
   margin: 0;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;

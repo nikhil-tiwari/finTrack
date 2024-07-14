@@ -50,18 +50,20 @@ const MainModal = ({ text, dispatchFnc, modalName }) => {
 
     if (amount !== "" && date !== null && name !== "" && tag!== "") {
       const formattedDate = dayjs(date).format('YYYY-MM-DD');
-      const transactionObj = {
+      let transactionObj = {
         name: name, 
         amount: amount, 
         date: formattedDate, 
         tag: tag
       }
       if (dispatchFnc === "addIncome") {
+        transactionObj = {...transactionObj, type: "income"};
         dispatch(addIncome(transactionObj));
-        addTransactionToFirebase(transactionObj, "income");
+        addTransactionToFirebase(transactionObj);
       } else {
+        transactionObj = {...transactionObj, type: "expense"};
         dispatch(addExpense(transactionObj));
-        addTransactionToFirebase(transactionObj, "expense");
+        addTransactionToFirebase(transactionObj);
       }
       setIsModalOpen(false);
       setAmount("");
@@ -73,12 +75,11 @@ const MainModal = ({ text, dispatchFnc, modalName }) => {
     }
   };
 
-  const addTransactionToFirebase = async (transactionObj, type) => {
+  const addTransactionToFirebase = async (transactionObj) => {
     if(!user) {
       toast.error("User does not exist");
       return;
     }
-    transactionObj = {...transactionObj, type: type};
     try {
       await addDoc(collection(db, `users/${user.uid}/transactions`), transactionObj);
       toast.success("Transaction added successfully");
