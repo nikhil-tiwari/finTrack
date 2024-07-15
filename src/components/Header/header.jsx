@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { Spin } from "antd";
+import userSVG from "../../assets/user.svg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Header = () => {
   }, [user, navigate]);
 
   const logoutfnc = () => {
-    alert("Logout!");
+    // alert("Logout!");
     signOut(auth)
       .then(() => {
         // Sign-out successful.
@@ -38,9 +39,15 @@ const Header = () => {
         <Spin className="loading-spinner" />
       ) : (
         user && (
-          <p className="logo link" onClick={logoutfnc}>
-            Logout
-          </p>
+          <div className="profile-wrapper">
+            <div className="profile-img">
+              <img src={user.photoURL ? user.photoURL : userSVG} alt="profile-img" />
+            </div>
+            <p className="logo link" onClick={logoutfnc}>
+              Logout
+            </p>
+          </div>
+          
         )
       )}
     </div>

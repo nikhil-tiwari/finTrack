@@ -1,6 +1,6 @@
 .table-wrapper {
     margin: 1.5rem;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 0.75rem;
     box-shadow: var(--shadow);
 }
@@ -17,6 +17,13 @@
     border-radius: 0.75rem;
     box-shadow: var(--shadow);
 }
+
+/* .search-image {
+    background-color: white;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75em;
+    box-shadow: var(--shadow);
+} */
 
 .options-wrapper {
     width: 27%;
@@ -37,10 +44,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .table-text {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
 }

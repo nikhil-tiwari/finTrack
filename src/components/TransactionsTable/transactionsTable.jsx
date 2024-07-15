@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./transactionsTable.css";
 import { Table, Input, Select, Radio } from "antd";
 import { useSelector } from "react-redux";
+// import searchSVG from "../../assets/search.svg";
 
 const TransactionsTable = () => {
   const [search, setSearch] = useState("");
   const [transactionFilter, setTransactionFilter] = useState("All");
+  const [timeAmountFilter, setTimeAmountFilter] = useState("time");
   const incomeTransactions = useSelector((store) => store.incomeTransaction);
   const expenseTransactions = useSelector((store) => store.expenseTransaction);
   const allTransactions = [...incomeTransactions, ...expenseTransactions];
@@ -48,10 +50,16 @@ const TransactionsTable = () => {
     transaction.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  if(transactionFilter === "Income" || transactionFilter === "Expense") {
-    filteredDataSource = filteredDataSource.filter((transaction) =>
-      transaction.type.toLowerCase() === transactionFilter.toLowerCase()
-    );
+  if(transactionFilter === "Income") {
+    filteredDataSource = [...incomeTransactions];
+  } else if(transactionFilter === "Expense") {
+    filteredDataSource = [...expenseTransactions];
+  }
+
+  if (timeAmountFilter === "time") {
+    filteredDataSource.sort((a, b) => new Date(b.date) - new Date(a.date));
+  } else if (timeAmountFilter === "amount") {
+    filteredDataSource.sort((a, b) => b.amount - a.amount);
   }
 
   const onChange = (event) => {
@@ -62,8 +70,8 @@ const TransactionsTable = () => {
     setTransactionFilter(value);
   }
 
-  const onChangeTimeAmount = () => {
-
+  const onChangeTimeAmount = (event) => {
+    setTimeAmountFilter(event.target.value);
   }
 
   return (
@@ -91,7 +99,7 @@ const TransactionsTable = () => {
       <div className="table-wrapper">
         <div className="table-options">
           <h2 className="table-text">My Transactions</h2>
-          <Radio.Group onChange={onChangeTimeAmount} defaultValue="time">
+          <Radio.Group  size="large" onChange={onChangeTimeAmount} defaultValue="time">
             <Radio.Button value="time">Sort by Time</Radio.Button>
             <Radio.Button value="amount">Sort by Amount</Radio.Button>
           </Radio.Group>

@@ -12,13 +12,14 @@
   .ant-select {
     width: 100%;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   
   .ant-modal-footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 1rem;
   }
   
   .ant-modal-footer .ant-btn {
