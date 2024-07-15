@@ -1,16 +1,46 @@
 .table-wrapper {
     margin: 1.5rem;
+    padding: 2rem;
     border-radius: 0.75rem;
     box-shadow: var(--shadow);
 }
 
 .input-options {
-    width: 100%;
+    margin: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .input-wrapper {
-    width: 30%;
+    width: 72%;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.options-wrapper {
+    width: 27%;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.ant-select {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.ant-table-wrapper {
+    border-radius: 0.75rem;
+}
+
+.table-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.table-text {
+    font-size: 2rem;
+    font-weight: 600;
 }

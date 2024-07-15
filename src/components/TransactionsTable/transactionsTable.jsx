@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import "./transactionsTable.css";
-import { Table, Input, Radio } from "antd";
+import { Table, Input, Select, Radio } from "antd";
 import { useSelector } from "react-redux";
-// import Input from '../Input/input';
 
 const TransactionsTable = () => {
   const [search, setSearch] = useState("");
+  const [transactionFilter, setTransactionFilter] = useState("All");
   const incomeTransactions = useSelector((store) => store.incomeTransaction);
   const expenseTransactions = useSelector((store) => store.expenseTransaction);
   const allTransactions = [...incomeTransactions, ...expenseTransactions];
+  const options = [
+    { label: "All", value: "All" },
+    { label: "Income", value: "Income" },
+    { label: "Expense", value: "Expense" }
+  ];
+  let filteredDataSource = [];
 
   const columns = [
     {
@@ -38,33 +44,60 @@ const TransactionsTable = () => {
     },
   ];
 
-  const filteredDataSource = allTransactions.filter((transaction) =>
+  filteredDataSource = allTransactions.filter((transaction) =>
     transaction.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  if(transactionFilter === "Income" || transactionFilter === "Expense") {
+    filteredDataSource = filteredDataSource.filter((transaction) =>
+      transaction.type.toLowerCase() === transactionFilter.toLowerCase()
+    );
+  }
 
   const onChange = (event) => {
     setSearch(event.target.value);
   };
 
+  const handleChangeFilter = (value) => {
+    setTransactionFilter(value);
+  }
+
+  const onChangeTimeAmount = () => {
+
+  }
+
   return (
-    <div className="table-wrapper">
+    <div className="table-input-options">
       <div className="input-options">
         <div className="input-wrapper">
           <Input
             style={{ MozBorderRadiusTopleft: "0.75rem" }}
+            size="large"
             value={search}
-            placeholder=""
+            placeholder="Search by name"
             onChange={onChange}
           />
         </div>
         <div className="options-wrapper">
-          <Radio.Group defaultValue="date" buttonStyle="solid">
-            <Radio.Button value="date">Sort By Date</Radio.Button>
-            <Radio.Button value="amount">Sort By Amount</Radio.Button>
-          </Radio.Group>
+          <Select
+            size="large"
+            defaultValue="All"
+            onChange={handleChangeFilter}
+            options={options}
+            value={transactionFilter}
+          />
         </div>
       </div>
-      <Table dataSource={filteredDataSource} columns={columns} />;
+      <div className="table-wrapper">
+        <div className="table-options">
+          <h2 className="table-text">My Transactions</h2>
+          <Radio.Group onChange={onChangeTimeAmount} defaultValue="time">
+            <Radio.Button value="time">Sort by Time</Radio.Button>
+            <Radio.Button value="amount">Sort by Amount</Radio.Button>
+          </Radio.Group>
+        </div>
+        <Table dataSource={filteredDataSource} columns={columns} />;
+      </div>
     </div>
   );
 };
