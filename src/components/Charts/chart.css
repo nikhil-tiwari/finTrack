@@ -1,0 +1,14 @@
+.svg-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-svg {
+    height: 20rem;
+    width: 20rem;
+}
+
+.transaction-text {
+    text-align: center;
+}

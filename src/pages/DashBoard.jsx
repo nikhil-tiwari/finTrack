@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { addIncome, clearIncome } from '../store/slices/income';
 import { addExpense, clearExpense } from '../store/slices/expense';
 import { toast } from 'react-toastify';
+import LineChart from '../components/Charts/chart';
 
 const DashBoard = () => {
   const [user] = useAuthState(auth);
@@ -49,6 +50,7 @@ const DashBoard = () => {
     <div>
       <Header />
       <Cards />
+      <LineChart />
       <TransactionsTable />
     </div>
   );
