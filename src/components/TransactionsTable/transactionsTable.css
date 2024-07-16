@@ -51,3 +51,11 @@
     font-size: 2rem;
     font-weight: 400;
 }
+
+.button-wrapper {
+    display: flex;
+}
+
+.ant-btn {
+    margin-top: 0;
+}

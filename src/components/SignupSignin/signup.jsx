@@ -117,7 +117,7 @@ const Signup = () => {
         photoURL: user.photoURL ? user.photoURL : "",
         creationTime: user.metadata.creationTime,
       });
-      toast.success("Document successfully written!");
+      // toast.success("Document successfully written!");
     } catch (error) {
       console.log("Error writing document:", error);
       toast.error(error.message);
