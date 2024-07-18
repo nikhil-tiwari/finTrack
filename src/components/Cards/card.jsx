@@ -16,8 +16,8 @@ const Cards = () => {
     const incomeAmount = incomeTransactions.reduce((acc, transaction) => acc + parseFloat(transaction.amount), 0);
     const expenseAmount = expenseTransactions.reduce((acc, transaction) => acc + parseFloat(transaction.amount), 0);
     const totalAmount = incomeAmount - expenseAmount;
-    console.log("Income Transactions:", incomeTransactions);
-    console.log("Expense Transactions:", expenseTransactions);
+    // console.log("Income Transactions:", incomeTransactions);
+    // console.log("Expense Transactions:", expenseTransactions);
     setIncome(incomeAmount);
     setExpense(expenseAmount);
     setBalance(totalAmount);

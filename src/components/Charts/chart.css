@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2rem;
 }
 
 .transaction-svg {
@@ -11,4 +12,66 @@
 
 .transaction-text {
     text-align: center;
+    margin: 2rem;
 }
+
+.chart-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-wrapper {
+    margin: 1.5rem;
+    width: 62%;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    height: 35rem;
+}
+
+.line-filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.pie-wrapper {
+    margin: 1.5rem;
+    width: 36%;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.pie-chart {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.details-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 15px;
+  }
+  
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .legend-text {
+    font-size: 14px;
+  }
