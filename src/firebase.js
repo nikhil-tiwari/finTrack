@@ -6,13 +6,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBWWSUlg-iHidL-bmi4fC4yyj6WYdsUq1o",
-  authDomain: "personal-finance-tracker-2ddfa.firebaseapp.com",
-  projectId: "personal-finance-tracker-2ddfa",
-  storageBucket: "personal-finance-tracker-2ddfa.appspot.com",
-  messagingSenderId: "670057252896",
-  appId: "1:670057252896:web:39eb5d60bd36e271d9d445",
-  measurementId: "G-7DS64CKBV1"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
