@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Personal Finance Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern web application designed to help users track their income and expenses efficiently. Built with React and various libraries, this app provides a seamless experience for managing personal finances.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+You can view the live application [here](https://fin-track-seven.vercel.app/). The application is deployed on Vercel for seamless hosting and performance.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Authentication**: Sign up and log in with email/password or Google accounts using Firebase Authentication.
+- **Expense & Income Tracking**: Add, view, and categorize your transactions (income and expenses) with ease.
+- **Data Visualization**: Visualize your financial data with interactive charts using Victory.js.
+- **Search & Filter**: Filter and search through your transactions to find specific records.
+- **CSV Import/Export**: Import and export transactions using CSV files for easy data management.
+- **Responsive Design**: Optimized for various screen sizes, providing a great user experience on both desktop and mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+1. **Sign Up/Sign In:**
+   - Create a new account or sign in using your existing credentials. You can also use Google sign-in for quicker access.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Add Transactions:**
+   - Use the modals provided to add income or expense transactions. Fill in the required details such as amount, category, and date.
 
-### `npm run build`
+3. **View Transactions:**
+   - View your transactions in a table format. You can filter and sort transactions based on criteria like date, amount, or category.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Export/Import CSV:**
+   - **Export:** Download your transactions as a CSV file for offline analysis or record-keeping.
+   - **Import:** Upload transactions from a CSV file to add them to your financial records.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**: For building the user interface.
+- **Redux Toolkit**: For state management.
+- **Ant Design**: For UI components and styling.
+- **Firebase**: For authentication and real-time database.
+- **Victory.js**: For creating charts and visualizations.
+- **React Router DOM**: For routing and navigation.
+- **React Toastify**: For displaying pop-up messages and notifications.
+- **PapaParse**: For parsing CSV files.
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To set up the project locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    git clone https://github.com/yourusername/personal-finance-tracker.git
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Navigate to the project directory:
 
-## Learn More
+    ```bash
+    cd personal-finance-tracker
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install the dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    npm install
+    ```
 
-### Code Splitting
+4. Set up Firebase by adding your Firebase configuration to the `firebase.js` file. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Ensure you have the required Firebase keys stored in a `.env` file at the root of the project. The `.env` file should include:
 
-### Analyzing the Bundle Size
+    ```env
+    REACT_APP_FIREBASE_API_KEY=your_api_key
+    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+    REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+    REACT_APP_FIREBASE_APP_ID=your_app_id
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   You will need to create your own Firebase setup and replace the placeholders with your Firebase configuration details.
 
-### Making a Progressive Web App
+5. Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ```bash
+    npm start
+    ```
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries or feedback, you can reach out to me at [nikhiltiwarig99@gmail.com](mailto:nikhiltiwarig99@gmail.com).
